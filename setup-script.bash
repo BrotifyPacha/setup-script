@@ -12,7 +12,8 @@ mkdir -p ~/.local/nvim
 rm -rf ~/.local/nvim/*
 mv ./squashfs-root/usr/* ~/.local/nvim/
 rm -rf ./squashfs-root
-echo "Image extracted to ~/.local/nvim/bin/nvim"
+echo "Image extracted to:"
+echo "    ~/.local/nvim/bin/nvim"
 
 echo "Cloning config"
 if [ -d ~/.config/nvim ] ; then

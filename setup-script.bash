@@ -22,4 +22,7 @@ fi
 mkdir -p ~/.config && cd ~/.config
 git clone http://github.com/brotifypacha/nvim > /dev/null 2>&1
 
+echo "Installing Neovim plugins"
+~/.local/nvim/bin/nvim -c 'PlugInstall | so $MYVIMRC | qa!'
+
 echo "Done!"

@@ -14,6 +14,7 @@ mv ./squashfs-root/usr/* ~/.local/neovim/
 rm -rf ./squashfs-root
 echo "Image extracted to:"
 echo "    ~/.local/neovim/bin/nvim"
+ln -fs ~/.local/neovim/bin/nvim ~/.local/bin/nvim
 
 echo "Cloning config"
 if [ -d ~/.config/nvim ] ; then
@@ -23,6 +24,6 @@ mkdir -p ~/.config && cd ~/.config
 git clone http://github.com/brotifypacha/nvim > /dev/null 2>&1
 
 echo "Installing Neovim plugins"
-~/.local/neovim/bin/nvim -c 'PlugInstall | so $MYVIMRC | qa!'
+nvim -c 'PlugInstall | so $MYVIMRC | qa!'
 
 echo "Done!"

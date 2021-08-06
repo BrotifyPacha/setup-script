@@ -16,7 +16,7 @@ echo "Image extracted to:"
 echo "    ~/.local/neovim/bin/nvim"
 ln -fs ~/.local/neovim/bin/nvim ~/.local/bin/nvim
 
-echo "Cloning config"
+echo "Cloning Neovim config"
 if [ -d ~/.config/nvim ] ; then
     rm -rf ~/.config/nvim
 fi

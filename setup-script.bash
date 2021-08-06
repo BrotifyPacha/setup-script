@@ -8,12 +8,12 @@ chmod 777 ./nvim.appimage
 ./nvim.appimage --appimage-extract > /dev/null 2>&1
 rm ./nvim.appimage
 
-mkdir -p ~/.local/nvim
-rm -rf ~/.local/nvim/*
-mv ./squashfs-root/usr/* ~/.local/nvim/
+mkdir -p ~/.local/neovim
+rm -rf ~/.local/neovim/*
+mv ./squashfs-root/usr/* ~/.local/neovim/
 rm -rf ./squashfs-root
 echo "Image extracted to:"
-echo "    ~/.local/nvim/bin/nvim"
+echo "    ~/.local/neovim/bin/nvim"
 
 echo "Cloning config"
 if [ -d ~/.config/nvim ] ; then
@@ -23,6 +23,6 @@ mkdir -p ~/.config && cd ~/.config
 git clone http://github.com/brotifypacha/nvim > /dev/null 2>&1
 
 echo "Installing Neovim plugins"
-~/.local/nvim/bin/nvim -c 'PlugInstall | so $MYVIMRC | qa!'
+~/.local/neovim/bin/nvim -c 'PlugInstall | so $MYVIMRC | qa!'
 
 echo "Done!"

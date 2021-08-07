@@ -1,9 +1,10 @@
 cd ~
 
-echo "Downloading nvim appimage"
+echo "Deploying neovim"
+echo " * Downloading nvim appimage"
 wget -q https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage
 
-echo "Extracting appimage"
+echo " * Extracting appimage"
 chmod 777 ./nvim.appimage
 ./nvim.appimage --appimage-extract > /dev/null 2>&1
 rm ./nvim.appimage
@@ -19,7 +20,7 @@ fi
 mkdir -p ~/.config && cd ~/.config
 git clone http://github.com/brotifypacha/nvim > /dev/null 2>&1
 
-echo "Installing Neovim plugins"
+echo " * Installing Neovim plugins"
 nvim -c 'PlugInstall | so $MYVIMRC | qa!'
 
 echo "Done!"

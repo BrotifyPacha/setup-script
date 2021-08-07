@@ -12,8 +12,6 @@ mkdir -p ~/.local/neovim
 rm -rf ~/.local/neovim/*
 mv ./squashfs-root/usr/* ~/.local/neovim/
 rm -rf ./squashfs-root
-echo "Image extracted to:"
-echo "    ~/.local/neovim/bin/nvim"
 ln -fs ~/.local/neovim/bin/nvim ~/.local/bin/nvim
 
 echo "Cloning Neovim config"

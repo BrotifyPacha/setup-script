@@ -1,6 +1,13 @@
 cd ~
 
-echo "Deploying neovim"
+echo "Cloning dotfiles"
+echo " * Cloning .dotfiles repo"
+git clone http://github.com/brotifypacha/.dotfiles > /dev/null 2>&1
+echo " * Executing linking script"
+chmod 777 ~/.dotfiles/link-all.sh
+~/.dotfiles/link-all.sh
+
+echo "Cloning neovim"
 echo " * Downloading nvim appimage"
 wget -q https://github.com/neovim/neovim/releases/download/v0.5.0/nvim.appimage
 

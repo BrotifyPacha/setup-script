@@ -8,10 +8,8 @@ chmod 777 ./nvim.appimage
 ./nvim.appimage --appimage-extract > /dev/null 2>&1
 rm ./nvim.appimage
 
-mkdir -p ~/.local/neovim
-rm -rf ~/.local/neovim/*
-mv ./squashfs-root/usr/* ~/.local/neovim/
-rm -rf ./squashfs-root
+mkdir -p ~/.local/neovim && rm -rf ~/.local/neovim/*
+mv ./squashfs-root/usr/* ~/.local/neovim/ && rm -rf ./squashfs-root
 ln -fs ~/.local/neovim/bin/nvim ~/.local/bin/nvim
 
 echo "Cloning Neovim config"
